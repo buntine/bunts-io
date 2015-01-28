@@ -1,3 +1,9 @@
 * { margin:0; padding:0; }
 html, body { width:100%; height:100%; }
 canvas { display:block; }
+#content {z-index:100; position:absolute; top:0; left:0; width: 100%; height: 100%;}
+#content h1 {position: absolute; top: 100px; left: 160px; font-size: 100px; color: #444; font-family: Helvetica;}
+#content ul {position: absolute; top: 207px; left: 160px; list-style: none;}
+#content ul li {margin: 19px 5px; letter-spacing: 2px; font-size: 24px;}
+a { color: blue; text-decoration: none;}
+a:hover { color: darkblue;}
