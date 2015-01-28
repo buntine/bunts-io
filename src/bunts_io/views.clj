@@ -6,5 +6,6 @@
     [:head 
       [:title "Bunts.io"]]
     [:body
-      [:h1 "hello world"]]
+      [:canvas {:id "gol"}]]
+     (include-css "/css/gol.css")
      (include-js "/js/gol.js")))
