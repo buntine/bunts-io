@@ -1,29 +1,27 @@
 (function () {
-  var w  = 110,
-      h  = 82,
-      r  = 120,
-      canvas = document.getElementById("gol"),
-      context = canvas.getContext("2d"),
+  var w   = 110,
+      h   = 82,
+      r   = 120,
+      cvs = document.getElementById("gol"),
+      ctx = cvs.getContext("2d"),
       cw,
       ch;
 
-  window.addEventListener("resize", resizeCanvas, false);
-  resizeCanvas();
+  window.addEventListener("resize", resize_canvas, false);
+  resize_canvas();
 
-  function resizeCanvas() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
+  function resize_canvas() {
+    cvs.width  = window.innerWidth;
+    cvs.height = window.innerHeight;
     cw = ((window.innerWidth - 10) / w).toFixed(1);
     ch = ((window.innerHeight - 10) / h).toFixed(1);
   }
 
   function build_world() {
-    var world = [],
-        alive;
+    var world = [];
 
     for (var n=0; n<(w*h); n++) {
-      alive = (n % 4 == 0) || (n % 14 == 0);
-      world.push(alive);
+      world.push((n % 4 == 0) || (n % 14 == 0));
     }
 
     return world;
@@ -42,17 +40,17 @@
         x  = cw * cx,
         y  = ch * cy;
 
-    context.beginPath();
-    context.fillRect(x, y, cw, ch);
-    context.fillStyle = "#eee";
-    context.fill();
+    ctx.beginPath();
+    ctx.fillRect(x, y, cw, ch);
+    ctx.fillStyle = "#eee";
+    ctx.fill();
   }
 
   (function step(state) {
     var sum,
         new_state = [];
 
-    context.clearRect (0, 0, canvas.width, canvas.height);
+    ctx.clearRect (0, 0, cvs.width, cvs.height);
 
     for (var c=0; c<state.length; c++) {
       sum = neighbours(c, state);
