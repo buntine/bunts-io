@@ -1,16 +1,21 @@
 (function () {
   var w   = 110,
       h   = 82,
-      r   = 120,
+      r   = 80,
       cvs = document.getElementById("gol"),
       ctx = cvs.getContext("2d"),
       s   = [((w * 20) + 50), ((w * 21) + 52), ((w * 22) + 49),
              ((w * 22) + 50), ((w * 22) + 53), ((w * 22) + 54), ((w * 22) + 55)],
+      p   = 1, 
       cw,
       ch;
 
   window.addEventListener("resize", resize_canvas, false);
   resize_canvas();
+
+  document.getElementById("content").addEventListener('click', function(event) {
+    p += 1;
+  });
 
   function resize_canvas() {
     cvs.width  = window.innerWidth;
@@ -36,15 +41,23 @@
            s[c+(w-1)] + s[c+(w+1)];
   }
 
+  function normalise(v, max) {
+    return parseInt(160 * ((v-1) / (max-1.0))) + 90;
+  }
+
   function draw(c) {
-    var cx = c % w,
-        cy = Math.trunc(c / h),
-        x  = cw * cx,
-        y  = ch * cy;
+    var cx     = c % w,
+        cy     = Math.trunc(c / h),
+        x      = cw * cx,
+        y      = ch * cy,
+        rgb    = normalise(cx, w),
+        scheme = [90,90,90];
+
+        scheme[p % 3] = rgb;
 
     ctx.beginPath();
-    ctx.fillStyle = "#eee";
-    ctx.lineWidth = 1;
+    ctx.fillStyle   = "rgb(" + scheme.join(",") + ")";
+    ctx.lineWidth   = 1;
     ctx.strokeStyle = "#ddd";
     ctx.fillRect(x, y, cw, ch);
     ctx.strokeRect(x, y, cw, ch);
