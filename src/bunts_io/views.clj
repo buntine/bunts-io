@@ -10,8 +10,8 @@
       [:div {:id "content"}
         [:h1 "Bunts.io"]
         [:ul {:id "menu"}
-          [:li [:a {:href "/aaa"} "Blog"]]
-          [:li [:a {:href "/aaa"} "Projects"]]
-          [:li [:a {:href "/aaa"} "Contact"]]]]]
+          [:li [:a {:href "http://blog.bunts.io/"} "Blog"]]
+          [:li [:a {:href "http://github.com/buntine/"} "Projects"]]
+          [:li [:a {:href "#contact"} "Contact"]]]]]
      (include-css "/css/gol.css")
      (include-js "/js/gol.js")))

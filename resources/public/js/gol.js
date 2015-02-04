@@ -4,6 +4,8 @@
       r   = 120,
       cvs = document.getElementById("gol"),
       ctx = cvs.getContext("2d"),
+      s   = [((w * 20) + 50), ((w * 21) + 52), ((w * 22) + 49),
+             ((w * 22) + 50), ((w * 22) + 53), ((w * 22) + 54), ((w * 22) + 55)],
       cw,
       ch;
 
@@ -21,7 +23,7 @@
     var world = [];
 
     for (var n=0; n<(w*h); n++) {
-      world.push((n % 4 == 0) || (n % 14 == 0));
+      world.push(s.indexOf(n) > -1);
     }
 
     return world;
@@ -41,9 +43,11 @@
         y  = ch * cy;
 
     ctx.beginPath();
-    ctx.fillRect(x, y, cw, ch);
     ctx.fillStyle = "#eee";
-    ctx.fill();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "#ddd";
+    ctx.fillRect(x, y, cw, ch);
+    ctx.strokeRect(x, y, cw, ch);
   }
 
   (function step(state) {
