@@ -6,15 +6,16 @@
       ctx = cvs.getContext("2d"),
       s   = [((w * 20) + 50), ((w * 21) + 52), ((w * 22) + 49),
              ((w * 22) + 50), ((w * 22) + 53), ((w * 22) + 54), ((w * 22) + 55)],
-      p   = 1, 
+      g   = 0,
       cw,
       ch;
 
   window.addEventListener("resize", resize_canvas, false);
   resize_canvas();
 
-  document.getElementById("content").addEventListener('click', function(event) {
-    p += 1;
+  document.getElementById("content").addEventListener("click", function(event) {
+    // Work out index of cell user may be hitting.
+    // Draw glider.
   });
 
   function resize_canvas() {
@@ -41,39 +42,35 @@
            s[c+(w-1)] + s[c+(w+1)];
   }
 
-  function normalise(v, max) {
-    return parseInt(160 * ((v-1) / (max-1.0))) + 90;
-  }
-
-  function draw(c) {
+  function draw(c, colour) {
     var cx     = c % w,
         cy     = Math.trunc(c / h),
         x      = cw * cx,
-        y      = ch * cy,
-        rgb    = normalise(cx, w),
-        scheme = [90,90,90];
-
-        scheme[p % 3] = rgb;
+        y      = ch * cy;
 
     ctx.beginPath();
-    ctx.fillStyle   = "rgb(" + scheme.join(",") + ")";
+    ctx.fillStyle   = "#" + colour;
     ctx.lineWidth   = 1;
-    ctx.strokeStyle = "#ddd";
+    ctx.strokeStyle = "#fff";
     ctx.fillRect(x, y, cw, ch);
     ctx.strokeRect(x, y, cw, ch);
   }
 
   (function step(state) {
     var sum,
+        colour,
         new_state = [];
 
     ctx.clearRect (0, 0, cvs.width, cvs.height);
+    g += 1;
+
+    colour = "afaaf4";
 
     for (var c=0; c<state.length; c++) {
       sum = neighbours(c, state);
 
       if (state[c] == 1) {
-        draw(c);
+        draw(c, colour);
       }
 
       if (state[c] == 1 && (sum < 2 || sum > 3)) {
