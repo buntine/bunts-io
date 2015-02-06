@@ -6,7 +6,6 @@
       ctx = cvs.getContext("2d"),
       s   = [((w * 20) + 50), ((w * 21) + 52), ((w * 22) + 49),
              ((w * 22) + 50), ((w * 22) + 53), ((w * 22) + 54), ((w * 22) + 55)],
-      g   = 0,
       cw,
       ch;
 
@@ -61,7 +60,6 @@
         new_state = [];
 
     ctx.clearRect (0, 0, cvs.width, cvs.height);
-    g += 1;
 
     for (var c=0; c<state.length; c++) {
       sum = neighbours(c, state);
