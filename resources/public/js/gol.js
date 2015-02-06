@@ -58,27 +58,24 @@
 
   (function step(state) {
     var sum,
-        colour,
         new_state = [];
 
     ctx.clearRect (0, 0, cvs.width, cvs.height);
     g += 1;
 
-    colour = "afaaf4";
-
     for (var c=0; c<state.length; c++) {
       sum = neighbours(c, state);
 
       if (state[c] == 1) {
-        draw(c, colour);
+        draw(c, "afaaf4");
       }
 
-      if (state[c] == 1 && (sum < 2 || sum > 3)) {
-        new_state[c] = 0;
-      } else if ((state[c] == 1 && (sum == 2 || sum == 3)) || (state[c] == 0 && sum == 3)) {
+      if (sum == 2) {
+        new_state[c] = state[c];
+      } else if (sum == 3) {
         new_state[c] = 1;
       } else {
-        new_state[c] = state[c];
+        new_state[c] = 0;
       }
     }
 
