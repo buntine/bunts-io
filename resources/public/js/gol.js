@@ -28,22 +28,22 @@
     var world = [];
 
     for (var n=0; n<(w*h); n++) {
-      world.push(s.indexOf(n) > -1);
+      world.push(s.indexOf(n) > -1 ? 1 : 0);
     }
 
     return world;
   }
 
   function neighbours(c, s) {
-    return s[c-1]     + s[c+1]     +
-           s[c-w]     + s[c+w]     +
-           s[c-(w-1)] + s[c-(w+1)] +
-           s[c+(w-1)] + s[c+(w+1)];
+    return s[c-1]   + s[c+1]   +
+           s[c-w]   + s[c+w]   +
+           s[c-w-1] + s[c-w+1] +
+           s[c+w-1] + s[c+w+1];
   }
 
   function draw(c, colour) {
     var cx     = c % w,
-        cy     = Math.trunc(c / h),
+        cy     = Math.trunc(c / w),
         x      = cw * cx,
         y      = ch * cy;
 
