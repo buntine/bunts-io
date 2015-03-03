@@ -14,4 +14,5 @@
           [:li [:a {:href "http://github.com/buntine/"} "Projects"]]
           [:li [:a {:href "#contact"} "Contact"]]]]]
      (include-css "/css/gol.css")
+     (include-js "/js/functional.min.js")
      (include-js "/js/gol.js")))

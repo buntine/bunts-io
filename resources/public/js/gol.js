@@ -1,21 +1,30 @@
 (function () {
-  var w   = 110,
-      h   = 82,
-      r   = 80,
-      cvs = document.getElementById("gol"),
-      ctx = cvs.getContext("2d"),
-      s   = [((w * 20) + 50), ((w * 21) + 52), ((w * 22) + 49),
+  var w      = 110,
+      h      = 82,
+      r      = 80,
+      cvs    = document.getElementById("gol"),
+      ctx    = cvs.getContext("2d"),
+      seed   = [((w * 20) + 50), ((w * 21) + 52), ((w * 22) + 49),
              ((w * 22) + 50), ((w * 22) + 53), ((w * 22) + 54), ((w * 22) + 55)],
+      glider = [0, (w + 1), (w + 2), (w * 2), (w * 2 + 1)],
+      mixin  = [],
       cw,
       ch;
 
   window.addEventListener("resize", resize_canvas, false);
   resize_canvas();
 
-  document.getElementById("content").addEventListener("click", function(event) {
-    // Work out index of cell user may be hitting.
-    // Draw glider.
+  document.getElementById("content").addEventListener("click", function(e) {
+    var cell = cell_for(e.x, e.y);
+    mixin = fjs.map(function(o) { return cell + o; }, glider)
   });
+
+  function cell_for(x, y) {
+    var cx = Math.round(x / cw),
+        cy = Math.round(y / ch);
+
+    return (Math.max(cy - 1, 0) * w) + cx;
+  }
 
   function resize_canvas() {
     cvs.width  = window.innerWidth;
@@ -28,7 +37,7 @@
     var world = [];
 
     for (var n=0; n<(w*h); n++) {
-      world.push(s.indexOf(n) > -1 ? 1 : 0);
+      world.push(seed.indexOf(n) > -1 ? 1 : 0);
     }
 
     return world;
@@ -75,6 +84,11 @@
       } else {
         new_state[c] = 0;
       }
+    }
+
+    if (mixin.length > 0) {
+      fjs.each(function(c){ new_state[c] = 1; }, mixin);
+      mixin = [];
     }
 
     setTimeout(function(){step(new_state);}, r);
