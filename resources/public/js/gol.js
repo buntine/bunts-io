@@ -20,22 +20,21 @@
   inc_colour();
 
   document.getElementById("content").addEventListener("click", function(e) {
-    var cell = cell_for(e.x, e.y);
+    var cell = cell_for(e.clientX, e.clientY);
     mixin = fjs.map(function(o) { return cell + o; }, glider)
   });
 
   function cell_for(x, y) {
     var cx = Math.round(x / cw),
         cy = Math.round(y / ch);
-
     return (Math.max(cy - 1, 0) * w) + cx;
   }
 
   function resize_canvas() {
     cvs.width  = window.innerWidth;
     cvs.height = window.innerHeight;
-    cw = ((window.innerWidth - 10) / w).toFixed(1);
-    ch = ((window.innerHeight - 10) / h).toFixed(1);
+    cw = Math.round(((window.innerWidth - 10) / w) * 100) / 100;
+    ch = Math.round(((window.innerHeight - 10) / h) * 100) / 100;
   }
 
   function inc_colour() {
