@@ -1,16 +1,14 @@
 (function () {
-  var w      = 110,
-      h      = 82,
-      r      = 60,
-      cvs    = document.getElementById("gol"),
-      ctx    = cvs.getContext("2d"),
-      seed   = [((w * 20) + 50), ((w * 21) + 52), ((w * 22) + 49),
+  var w = 110,
+      h = 82,
+      r = 50,
+      cvs = document.getElementById("gol"),
+      ctx = cvs.getContext("2d"),
+      seed = [((w * 20) + 50), ((w * 21) + 52), ((w * 22) + 49),
              ((w * 22) + 50), ((w * 22) + 53), ((w * 22) + 54), ((w * 22) + 55)],
       glider = [0, (w + 1), (w + 2), (w * 2), (w * 2 + 1)],
-      mixin  = [],
-      start_colour = 9496061,
-      end_colour   = 882784,
-      colours = ["90E5FD", "8DE2F9", "8AE0F6", "87DEF3", "85DCF0", "82D9EC", "7FD7E9", "7DD5E6", "7AD3E3", "77D0E0", "75CEDC", "72CCD9", "6FCAD6", "6DC8D3", "6AC5D0", "67C3CC", "65C1C9", "62BFC6", "5FBCC3", "5DBAC0", "5AB8BC", "57B6B9", "55B4B6", "52B1B3", "4FAFB0", "4DADAC", "4AABA9", "47A8A6", "45A6A3", "42A4A0", "3FA29C", "3DA099", "3A9D96", "379B93", "359990", "32978C", "2F9489", "2D9286", "2A9083", "278E80", "258C7C", "228979", "1F8776", "1D8573", "1A8370", "17806C", "157E69", "127C66", "0F7A63", "0D7860"], // TODO: Generate this array from start_colour and end_colour. See Asciano.
+      mixin = [],
+      colours = gradient(),
       colour = 0,
       cw,
       ch;
@@ -23,6 +21,24 @@
     var cell = cell_for(e.clientX, e.clientY);
     mixin = fjs.map(function(o) { return cell + o; }, glider)
   });
+
+  function gradient() {
+    function to_i(s) {
+      return parseInt(s, 16);
+    }
+
+    var start_colour = "90e5fd",
+        end_colour = "0d7860",
+        length = 50,
+        step = (to_i(end_colour) - to_i(start_colour)) / (length - 1),
+        colours = [start_colour];
+
+    //while (colours.length < length) {
+      
+   // }
+
+    return ["90E5FD", "8DE2F9", "8AE0F6", "87DEF3", "85DCF0", "82D9EC", "7FD7E9", "7DD5E6", "7AD3E3", "77D0E0", "75CEDC", "72CCD9", "6FCAD6", "6DC8D3", "6AC5D0", "67C3CC", "65C1C9", "62BFC6", "5FBCC3", "5DBAC0", "5AB8BC", "57B6B9", "55B4B6", "52B1B3", "4FAFB0", "4DADAC", "4AABA9", "47A8A6", "45A6A3", "42A4A0", "3FA29C", "3DA099", "3A9D96", "379B93", "359990", "32978C", "2F9489", "2D9286", "2A9083", "278E80", "258C7C", "228979", "1F8776", "1D8573", "1A8370", "17806C", "157E69", "127C66", "0F7A63", "0D7860"];
+  }
 
   function cell_for(x, y) {
     var cx = Math.round(x / cw),
@@ -38,23 +54,19 @@
   }
 
   function inc_colour() {
-    colour += 1;
+    var f;
 
-    if (colour >= colours.length) {
-      setTimeout(dec_colour, 100);
-    } else {
-      setTimeout(inc_colour, 100);
-    }
+    colour += 1;
+    f = (colour >= colours.length) ? dec_colour : inc_colour;
+    setTimeout(f, r);
   }
 
   function dec_colour() {
-    colour -= 1;
+    var f;
 
-    if (colour <= 0) {
-      setTimeout(inc_colour, 100);
-    } else {
-      setTimeout(dec_colour, 100);
-    }
+    colour -= 1;
+    f = (colour <= 0) ? inc_colour : dec_colour;
+    setTimeout(f, r);
   }
 
   function build_world() {
