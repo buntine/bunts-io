@@ -12,6 +12,7 @@ document.getElementById("contact").addEventListener("click", function(e) {
     },
     finish: function(){
       contact.style.display = "none";
+      email.style.display = "block";
 
       tweenable.tween({
         from: {opacity: 0.0},
