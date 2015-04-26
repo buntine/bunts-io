@@ -1,9 +1,9 @@
 * {margin:0; padding:0;}
 html, body {width:100%; height:100%; font-family: Helvetica; background: #eee;}
 #content {z-index:100; position:absolute; top:0; left:0; width: 100%; height: 100%;}
-#nav {position: relative; top:50%; transform: translateY(-50%); margin: 20px auto; width: 180px; height: 180px; border-radius: 100px; padding: 10px; background: #fff; border: 1px solid #90e5fd; z-index: 100;}
+#nav {position: relative; top:50%; -webkit-transform: translateY(-50%); margin: 20px auto; width: 180px; height: 180px; border-radius: 100px; padding: 10px; background: #fff; border: 1px solid #90e5fd; z-index: 100;}
 #nav h1 {font-size: 34px; color: #444; margin: 4px auto; width: 120px; position: absolute; top:-1000px;}
-#nav ul {position: relative; top: 50%; transform: translateY(-50%); margin: 5px 0; list-style: none; padding:0px;}
+#nav ul {position: relative; top: 50%; -webkit-transform: translateY(-50%); margin: 5px 0; list-style: none; padding:0px;}
 #nav ul li {margin: 5px 10px; letter-spacing: 3px; font-size: 18px; text-align: center; background-color: #eee;}
 a {color: #52B1B3; text-decoration: none;}
 a:hover {color: #0D7860;}
