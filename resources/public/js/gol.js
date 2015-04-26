@@ -19,15 +19,12 @@
 
   document.getElementById("content").addEventListener("click", function(e) {
     var cell = cell_for(e.clientX, e.clientY);
-    mixin = fjs.map(function(o) { return cell + o; }, glider)
+    mixin = fjs.map(function(o) {return cell + o;}, glider)
   });
 
   function gradient() {
-    function to_i(s) {
-      return parseInt(s, 16);
-    }
-
-    var start_colour = "90e5fd",
+    var to_i = function(s) {return parseInt(s, 16);},
+        start_colour = "90e5fd",
         end_colour = "0d7860",
         length = 50,
         step = (to_i(end_colour) - to_i(start_colour)) / (length - 1),
@@ -47,7 +44,7 @@
   }
 
   function resize_canvas() {
-    cvs.width  = window.innerWidth;
+    cvs.width = window.innerWidth;
     cvs.height = window.innerHeight;
     cw = Math.round(((window.innerWidth - 10) / w) * 100) / 100;
     ch = Math.round(((window.innerHeight - 10) / h) * 100) / 100;
@@ -87,14 +84,14 @@
   }
 
   function draw(c) {
-    var cx     = c % w,
-        cy     = Math.trunc(c / w),
-        x      = cw * cx,
-        y      = ch * cy;
+    var cx = c % w,
+        cy = Math.trunc(c / w),
+        x = cw * cx,
+        y = ch * cy;
 
     ctx.beginPath();
-    ctx.fillStyle   = "#" + colours[colour];
-    ctx.lineWidth   = 1;
+    ctx.fillStyle = "#" + colours[colour];
+    ctx.lineWidth = 1;
     ctx.strokeStyle = "#fff";
     ctx.fillRect(x, y, cw, ch);
     ctx.strokeRect(x, y, cw, ch);
@@ -105,7 +102,7 @@
         new_state = [],
         alive = 0;
 
-    ctx.clearRect (0, 0, cvs.width, cvs.height);
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
 
     for (var c=0; c<state.length; c++) {
       sum = neighbours(c, state);
@@ -125,7 +122,7 @@
     }
 
     if (mixin.length > 0) {
-      fjs.each(function(c){ new_state[c] = 1; }, mixin);
+      fjs.each(function(c){new_state[c] = 1;}, mixin);
       mixin = [];
     }
 

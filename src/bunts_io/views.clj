@@ -4,7 +4,8 @@
 (defn home-page []
   (html
     [:head 
-      [:title "Bunts.io"]]
+      [:title "Bunts.io"]
+      [:meta {:name "viewport" :content "width=device-width, initial-scale=1, maximum-scale=1"}]]
     [:body
       [:canvas {:id "gol"}]
       [:div {:id "content"}
