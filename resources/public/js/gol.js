@@ -23,12 +23,12 @@
   });
 
   function gradient() {
-    var to_i = function(s) {return parseInt(s, 16);},
-        to_h = function(i) {return i.toString(16);},
-        rgb,
+    var rgb,
         range = ["90e5fd", "0d7860"],
         length = 50,
         colours = [range[0]],
+        to_i = function(s) {return parseInt(s, 16);},
+        to_h = function(i) {return i.toString(16);},
         split_parts = function(s) {
           return fjs.map(function(i){
             return s.slice(i, i + 2);
@@ -44,20 +44,18 @@
           return merged;
         },
         steps = fjs.map(function(s){
-          return parseInt((to_i(s[0]) - to_i(s[1])) / (length - 1));
+          return parseInt((to_i(s[0]) - to_i(s[1])) / length);
         }, merge.apply(this, (fjs.map(split_parts, range))));
 
     while (colours.length < length) {
       rgb = merge(split_parts(colours[colours.length - 1]), steps);
       rgb = fjs.map(function(s){
-        return to_h(to_i(s[0]) + s[1]);
+        return to_h(to_i(s[0]) - s[1]);
       }, rgb);
 
       colours.push(rgb.join(""));
     }
-    console.log(steps);
 
-//return ["90E5FD", "8DE2F9", "8AE0F6", "87DEF3", "85DCF0", "82D9EC", "7FD7E9", "7DD5E6", "7AD3E3", "77D0E0", "75CEDC", "72CCD9", "6FCAD6", "6DC8D3", "6AC5D0", "67C3CC", "65C1C9", "62BFC6", "5FBCC3", "5DBAC0", "5AB8BC", "57B6B9", "55B4B6", "52B1B3", "4FAFB0", "4DADAC", "4AABA9", "47A8A6", "45A6A3", "42A4A0", "3FA29C", "3DA099", "3A9D96", "379B93", "359990", "32978C", "2F9489", "2D9286", "2A9083", "278E80", "258C7C", "228979", "1F8776", "1D8573", "1A8370", "17806C", "157E69", "127C66", "0F7A63", "0D7860"];
     return colours;
   }
 
