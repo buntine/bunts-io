@@ -10,6 +10,7 @@
       mixin = [],
       colours = gradient(),
       colour = 0,
+      circle = document.getElementById("nav"),
       cw,
       ch;
 
@@ -117,6 +118,8 @@
     ctx.strokeStyle = "#fff";
     ctx.fillRect(x, y, cw, ch);
     ctx.strokeRect(x, y, cw, ch);
+
+    circle.style.borderColor = "#" + colours[colour];
   }
 
   (function step(state) {
