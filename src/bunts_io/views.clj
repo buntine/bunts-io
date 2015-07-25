@@ -5,7 +5,7 @@
   (html
     [:head 
       [:title "Andrew Buntine - Bunts.io"]
-      [:meta {:name "description" :content "Andrew Buntine - Conjurer of computational spells and trickery."}]]
+      [:meta {:name "description" :content "Andrew Buntine - Conjurer of computational spells and trickery."}]
       [:meta {:name "viewport" :content "width=device-width, initial-scale=1, maximum-scale=1"}]]
     [:body
       [:canvas {:id "gol"}]
