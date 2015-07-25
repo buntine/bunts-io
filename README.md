@@ -1,6 +1,6 @@
 # bunts_io
 
-FIXME
+Source for [bunts.io](http://bunts.io/)
 
 ## Prerequisites
 
@@ -16,4 +16,4 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2015 FIXME
+Copyright © 2015 Andrew Buntine
