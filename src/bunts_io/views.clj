@@ -4,13 +4,14 @@
 (defn home-page []
   (html
     [:head 
-      [:title "Bunts.io"]
+      [:title "Andrew Buntine - Bunts.io"]
+      [:meta {:name "description" :content "Andrew Buntine - Conjurer of computational spells and trickery."}]]
       [:meta {:name "viewport" :content "width=device-width, initial-scale=1, maximum-scale=1"}]]
     [:body
       [:canvas {:id "gol"}]
       [:div {:id "content"}
         [:div {:id "nav"}
-          [:h1 "Bunts.io"]
+          [:h1 "Andrew Buntine, Melbourne Australia. Bunts.io"]
           [:ul {:id "menu"}
             [:li [:a {:href "http://codrspace.com/buntine/"} "BLOG"]]
             [:li [:a {:href "http://github.com/buntine/"} "PROJECTS"]]
