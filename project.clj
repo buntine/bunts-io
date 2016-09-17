@@ -1,6 +1,6 @@
 (defproject bunts-io "0.1.1-SNAPSHOT"
   :description "Personal website of Andrew Buntine"
-  :url "http://bunts.io"
+  :url "http://bunts.io/"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [compojure "1.3.1"]
