@@ -17,9 +17,5 @@
             [:li [:a {:href "http://github.com/buntine/"} "PROJECTS"]]
             [:li [:a {:href "#" :id "contact"} "CONTACT"]
                  [:span {:id "swagmail"} "&#105;&#110;&#102;&#111;&#064;&#098;&#117;&#110;&#116;&#115;&#046;&#105;&#111;"]]]]]]
-     (include-css "/css/gol.css")
-     (include-css "/css/main.css")
-     (include-js "/js/functional.min.js")
-     (include-js "/js/shifty.min.js")
-     (include-js "/js/main.js")
-     (include-js "/js/gol.js")))
+     (include-css "/css/app.css")
+     (include-js "/js/app.js")))
