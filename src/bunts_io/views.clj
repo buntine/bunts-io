@@ -2,7 +2,7 @@
   (:use [hiccup core page]))
 
 (defn home-page []
-  (html
+  (html5 {:lang "en"}
     [:head 
       [:title "Andrew Buntine - Bunts.io"]
       [:meta {:name "description" :content "Andrew Buntine - Conjurer of computational spells and trickery."}]
