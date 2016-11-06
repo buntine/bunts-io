@@ -37,12 +37,21 @@
           [:div "http://bunts.io"]]]
       [:section {:id "summary"}
         [:h2 "Summary"]
-        [:p
-          "This is me."]]
+        [:div {:class "indent"}
+          [:p "This is me."]]]
       [:section {:id "experience"}
-        [:h2 "Work Experience"]
-        [:p
-          "This is me."]]
+        [:h2 "Experience"]
+        [:div {:class "indent"}
+          [:ul
+            [:li [:strong "Job Title"]]
+            [:li "Company name, Location"]
+            [:li "Duration - Duration"]
+            [:li {:class "details"} "Details."]]
+          [:ul
+            [:li [:strong "Job Title"]]
+            [:li "Company name, Location"]
+            [:li "Duration - Duration"]
+            [:li {:class "details"} "Details."]]]]
       [:section {:id "education"}
         [:h2 "Education"]
         [:p
