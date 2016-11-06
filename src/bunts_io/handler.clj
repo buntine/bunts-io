@@ -7,6 +7,7 @@
 
 (defroutes app-routes
   (GET "/" [] (views/home-page))
+  (GET "/resume" [] (views/resume))
   (GET "/experiments/:exp_name" [exp_name]
     (sp/render-file (str "public/raw/" exp_name ".html") {}))
 

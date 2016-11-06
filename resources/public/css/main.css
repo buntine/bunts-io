@@ -8,3 +8,8 @@ html, body {width:100%; height:100%; font-family: Helvetica; background: #eee;}
 a {color: #52B1B3; text-decoration: none;}
 a:hover {color: #0D7860;}
 #swagmail {opacity: 0; display: none;}
+body#resume {margin: 0; padding: 30px 40px; width: auto; height: auto; font-size: 18px; letter-spacing: 1.0px;}
+body#resume header  {margin-bottom: 70px;}
+body#resume h1 {font-size: 64px; color: #444;}
+body#resume h2 {font-size: 32px; color: #444; width: 100%; border-bottom: 1px solid #777; text-transform: uppercase;}
+body#resume #contact {position: absolute; top: 30px; right: 40px; content-align: right;}
