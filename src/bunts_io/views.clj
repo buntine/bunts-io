@@ -54,6 +54,13 @@
             [:li {:class "details"} "Details."]]]]
       [:section {:id "education"}
         [:h2 "Education"]
-        [:p
-          "This is me."]]]
+        [:div {:class "indent"}
+          [:ul
+            [:li [:strong "Qualification"]]
+            [:li "Institution, Location"]
+            [:li "Duration - Duration"]]
+          [:ul
+            [:li [:strong "Qualification"]]
+            [:li "Institution, Location"]
+            [:li "Duration - Duration"]]]]]
      (include-css "/css/main.css")))
