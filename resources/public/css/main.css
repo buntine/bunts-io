@@ -11,10 +11,14 @@ a:hover {color: #0D7860;}
 #swagmail {opacity: 0; display: none;}
 body#resume {margin: 0; padding: 30px 40px; width: auto; height: auto; font-size: 18px; letter-spacing: 1.0px; background: #fff;}
 body#resume p {margin-bottom: 10px;}
+body#resume a {color: blue;}
 body#resume header  {margin-bottom: 70px;}
 body#resume h1 {font-size: 64px; color: #444;}
 body#resume h2 {font-size: 32px; color: #444; width: 100%; border-bottom: 1px solid #777; text-transform: uppercase;}
+body#resume h3 {font-size: 22px; color: #444; margin-bottom: 5px;}
 body#resume #contact {position: absolute; top: 40px; right: 40px; content-align: right;}
+body#resume #contact ul {list-style: none; margin: 0; padding: 0;}
+body#resume #contact ul li {margin-bottom: 4px;}
 body#resume section div.indent {margin: 15px 0 15px 40px;}
 body#resume section {margin-bottom: 43px;}
 body#resume section ul {list-style:none; padding:0; margin:0 0 28px 0;}

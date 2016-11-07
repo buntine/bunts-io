@@ -32,9 +32,10 @@
         [:h3 "Software Developer & Mentor"]
         [:span "Melbourne, Australia"]
         [:div {:id "contact"}
-          [:div [:a {:href "mailto:info@bunts.io"} "info@bunts.io"]]
-          [:div "0423 638 309"]
-          [:div [:a {:href "http://bunts.io/"} "http://bunts.io/"]]]]
+          [:ul
+            [:li [:a {:href "mailto:info@bunts.io"} "info@bunts.io"]]
+            [:li [:a {:href "http://bunts.io/"} "http://bunts.io"]]
+            [:li "0423 638 309"]]]]
       [:section {:id "summary"}
         [:h2 "Summary"]
         [:div {:class "indent"}
