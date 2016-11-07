@@ -16,7 +16,8 @@ body#resume header  {margin-bottom: 70px;}
 body#resume h1 {font-size: 64px; color: #444;}
 body#resume h2 {font-size: 32px; color: #444; width: 100%; border-bottom: 1px solid #777; text-transform: uppercase;}
 body#resume h3 {font-size: 22px; color: #444; margin-bottom: 5px;}
-body#resume #contact {position: absolute; top: 40px; right: 40px; content-align: right;}
+body#resume #contact {margin: 40px 0;}
+@media all and (min-width: 600px) { body#resume #contact {position: absolute; top: 40px; right: 40px; content-align: right; margin: 0;} }
 body#resume #contact ul {list-style: none; margin: 0; padding: 0;}
 body#resume #contact ul li {margin-bottom: 4px;}
 body#resume section div.indent {margin: 15px 0 15px 40px;}

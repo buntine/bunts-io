@@ -46,15 +46,20 @@
         [:h2 "Experience"]
         [:div {:class "indent"}
           [:ul
+            [:li [:strong "Instructor / Guest Speaker"]]
+            [:li "General Assembly, Melbourne"]
+            [:li "June 2015 - Present"]
+            [:li {:class "details"} "I've spoken at General Assembly a number of times. I initially volunteered to help students prepare for life as junior developers by giving them tips for technical interviews, providing code reviews and giving general career advice. I've also taught several introductory short courses during the evenings."]]
+          [:ul
             [:li [:strong "Technical Director"]]
             [:li "Hardhat, Melbourne"]
             [:li "May 2013 - Present"]
-            [:li {:class "details"} "As the company grew, there was a need for a manager of the development team. I took on this responsibility and grew the team out to eight people. It was my job to mentor junior developers and instil confidence in them, maintain infrastructure (DevOps) and represent technology at a board-level. This position is generally 85% management, 15% production."]]
+            [:li {:class "details"} "As the Hardhat agency and brand grew, there was a need for a manager of the development team. I took on this responsibility and grew the team out to eight people. It is my job to mentor junior developers and instil confidence in them, maintain infrastructure (DevOps) and assist heavily in the planning, scoping and high-level infrastructural decisions of new projects. I also represent technology at a board-level. This position is generally 85% management, 15% production."]]
           [:ul
             [:li [:strong "Lead Developer"]]
             [:li "Hardhat, Melbourne"]
             [:li "May 2010 - May 2013"]
-            [:li {:class "details"} "I came into Hardhat with the task of reinventing their technological capabilities. I built a new team of developers and moved the company across to Ruby on Rails. I also implemented best practises such as version control and automated deployment. In this role I was 80% production %20 management. I worked on many mid-large websites including several corporate websites and also a bunch of heavy-traffic campaign apps."]]
+            [:li {:class "details"} "I came into Hardhat, a digital agency, with the task of reinventing their technological capabilities. I built a new team of developers and moved the company across to Ruby on Rails. I also implemented best practises such as version control and automated deployment. In this role I was 80% production %20 management. I worked on many mid-large websites including several corporate websites and also a bunch of heavy-traffic campaign apps."]]
           [:ul
             [:li [:strong "Senior Developer"]]
             [:li "Ansearch, Melbourne"]
@@ -64,12 +69,12 @@
             [:li [:strong "Lead Developer"]]
             [:li "Webfirm, Melbourne"]
             [:li "March 2008 - February 2009"]
-            [:li {:class "details"} "I was given the chance to move interstate as the company expanded. I looked after the dev team and also worked on small-mid sized web applications. I also used my newfound responsibility to switch the company from ASP classic to Ruby on Rails. I managed a small team of three here."]]
+            [:li {:class "details"} "I was given the chance to move interstate as Webfirm expanded. I looked after the dev team and also worked on small-mid sized web applications. I also used my newfound responsibility to switch the company from ASP classic to Ruby on Rails. I managed a small team of three here."]]
           [:ul
             [:li [:strong "Web Developer"]]
             [:li "Webfirm, Perth"]
             [:li "August 2005 - February 2008"]
-            [:li {:class "details"} "I joined the team as a junior web developer. I was primarily working in ASP Classic using some proprietary libraries. We were a team of about six developers and there was no separation between front-end and back-end developers."]]]]
+            [:li {:class "details"} "I joined the team at Webfirm, a web development studio, as a junior web developer. I was primarily working in ASP Classic using some proprietary libraries. We were a team of about six developers and there was no separation between front-end and back-end developers."]]]]
       [:section {:id "education"}
         [:h2 "Education"]
         [:div {:class "indent"}
