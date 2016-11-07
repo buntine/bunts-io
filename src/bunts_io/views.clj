@@ -86,4 +86,4 @@
             [:li [:strong "Diploma of Software Development"]]
             [:li "Central Institute of Technology, Perth"]
             [:li "2003 - 2004"]]]]]
-     (include-css "/css/main.css")))
+     (include-css "/css/app.css")))
