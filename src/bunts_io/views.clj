@@ -79,11 +79,11 @@
         [:h2 "Education"]
         [:div {:class "indent"}
           [:ul
-            [:li [:strong "Advanced Diploma of Software Development (Web)"]]
-            [:li "Central Institute of Technology, Perth"]
-            [:li "2004 - 2005"]]
+            [:li [:strong "Bachelor of Computer Science"]]
+            [:li "Deakin University, Cloud Campus"]
+            [:li "2017 - "]]
           [:ul
             [:li [:strong "Diploma of Software Development"]]
             [:li "Central Institute of Technology, Perth"]
-            [:li "2003 - 2004"]]]]]
+            [:li "2003 - 2005"]]]]]
      (include-css "/css/app.css")))
