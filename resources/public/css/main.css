@@ -6,10 +6,12 @@ html {background: #fff;}
 .nav_small { width: 180px; height: 180px; border-radius: 100px;}
 .nav_large { width: 300px; height: 300px; border-radius: 5px;}
 #nav h1 {font-size: 34px; color: #444; margin: 4px auto; width: 120px; position: absolute; top:-1000px;}
-#nav ul {position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); margin: 5px 0; list-style: none; padding:0px;}
-#nav ul li {margin: 5px 10px; letter-spacing: 3px; font-size: 18px; text-align: center; background-color: #eee;}
+#nav > ul {position: relative; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); margin: 5px 0; list-style: none; padding:0px;}
+#nav > ul > li {margin: 7px 10px; letter-spacing: 3px; font-size: 18px; text-align: center; background-color: #eee; font-weight: bold;}
+#nav ul#submenu {opacity: 0; height: 0; transition: all .81s;}
+#nav ul#submenu li:first-child {padding-top:10px;}
+#nav ul#submenu li {list-style: none;}
 a {color: #52B1B3; text-decoration: none;}
-a:hover {color: #0D7860;}
 #swagmail {opacity: 0; display: none;}
 body#resume {margin: 0; padding: 30px 40px; width: auto; height: auto; font-size: 18px; letter-spacing: 1.0px; background: #fff;}
 body#resume p {margin-bottom: 10px;}
