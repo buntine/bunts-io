@@ -1,3 +1,11 @@
+document.getElementById("projects").addEventListener("click", function(e) {
+  e.preventDefault();
+
+  var nav = document.getElementById("nav");
+
+  nav.classList.toggle("nav_large");
+});
+
 document.getElementById("contact").addEventListener("click", function(e) {
   var tweenable = new Tweenable(),
       contact = this,

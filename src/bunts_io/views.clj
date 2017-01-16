@@ -10,11 +10,11 @@
     [:body
       [:canvas {:id "gol"}]
       [:div {:id "content"}
-        [:div {:id "nav"}
+        [:div {:id "nav" :class "nav_small"}
           [:h1 "Andrew Buntine, Melbourne Australia. Bunts.io"]
           [:ul {:id "menu"}
             [:li [:a {:href "http://dev.to/buntine"} "BLOG"]]
-            [:li [:a {:href "http://github.com/buntine/"} "PROJECTS"]]
+            [:li [:a {:href "http://github.com/buntine/" :id "projects"} "PROJECTS"]]
             [:li [:a {:href "#" :id "contact"} "CONTACT"]
                  [:span {:id "swagmail"} "&#105;&#110;&#102;&#111;&#064;&#098;&#117;&#110;&#116;&#115;&#046;&#105;&#111;"]]]]]]
      (include-css "/css/app.css")
