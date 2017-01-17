@@ -9,8 +9,7 @@ html {background: #fff;}
 #nav > ul {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); margin: 5px 0; list-style: none; padding:0px;}
 #nav > ul > li {margin: 12px 10px; letter-spacing: 3px; font-size: 18px; text-align: center; font-weight: bold;}
 #nav ul#submenu {opacity: 0; height: 0; transition: all .81s;}
-#nav ul#submenu li:first-child {padding-top:10px;}
-#nav ul#submenu li {list-style: none;}
+#nav ul#submenu li {margin:10px; list-style: none; display: inline;}
 a {color: #52B1B3; text-decoration: none;}
 #swagmail {opacity: 0; display: none;}
 body#resume {margin: 0; padding: 30px 40px; width: auto; height: auto; font-size: 18px; letter-spacing: 1.0px; background: #fff;}

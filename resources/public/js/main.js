@@ -1,20 +1,3 @@
-document.getElementById("projects").addEventListener("click", function(e) {
-  e.preventDefault();
-
-  var nav = document.getElementById("nav");
-  var submenu = document.getElementById("submenu");
-
-  if (nav.classList.contains("nav_large")) {
-    nav.classList.remove("nav_large");
-    submenu.style.height = "0";
-    submenu.style.opacity = 0;
-  } else {
-    nav.classList.add("nav_large");
-    submenu.style.height = "60px";
-    submenu.style.opacity = 1.0;
-  }
-});
-
 document.getElementById("contact").addEventListener("click", function(e) {
   var tweenable = new Tweenable(),
       contact = this,
