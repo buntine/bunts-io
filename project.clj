@@ -1,4 +1,4 @@
-(defproject bunts-io "0.1.4-SNAPSHOT"
+(defproject bunts-io "0.1.5-SNAPSHOT"
   :description "Personal website of Andrew Buntine"
   :url "http://bunts.io/"
   :min-lein-version "2.0.0"
